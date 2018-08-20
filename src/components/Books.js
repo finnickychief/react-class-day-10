@@ -17,7 +17,12 @@ export default props => {
         return (
           <div className="grid-container" style={divStyle}>
             {store.bookArray.map((book, index) => (
-              <Book key={`book-${index}`} book={book} dispatch={dispatch} />
+              <Book
+                key={`book-${index}`}
+                book={book}
+                dispatch={dispatch}
+                history={props.history}
+              />
             ))}
           </div>
         );

@@ -1,9 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { sayHi } from './types';
+import { BrowserRouter } from 'react-router-dom';
 
 sayHi();
 
 import App from './App';
 
-ReactDOM.render(<App />, document.querySelector('#app'));
+ReactDOM.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+  document.querySelector('#app')
+);

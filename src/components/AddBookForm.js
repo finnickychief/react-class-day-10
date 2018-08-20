@@ -37,6 +37,7 @@ class AddBookForm extends Component {
     // dispatch(action);
 
     createBook(newBook, dispatch);
+    this.props.history.push('/');
   };
 
   render() {

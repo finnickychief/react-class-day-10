@@ -1,6 +1,7 @@
 import React from 'react';
 import { Consumer } from '../context';
 import { CHANGE_ROUTE } from '../types';
+import { Link } from 'react-router-dom';
 
 class Navbar extends React.Component {
   handleRoute = (dispatch, route) => {
@@ -25,26 +26,12 @@ class Navbar extends React.Component {
               <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav ml-auto">
                   <li className="nav-item active">
-                    <a
-                      className="nav-link"
-                      style={{ cursor: 'pointer' }}
-                      onClick={this.handleRoute.bind(
-                        this,
-                        dispatch,
-                        'viewBooks'
-                      )}
-                    >
+                    <Link to="/">
                       View <span className="sr-only">(current)</span>
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-item">
-                    <a
-                      className="nav-link"
-                      style={{ cursor: 'pointer' }}
-                      onClick={this.handleRoute.bind(this, dispatch, 'addBook')}
-                    >
-                      Add
-                    </a>
+                    <Link to="/addBook">Add</Link>
                   </li>
                 </ul>
               </div>

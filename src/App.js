@@ -10,7 +10,7 @@ export default class App extends Component {
         <Consumer>
           {store => {
             const { dispatch, route } = store;
-            return <BookList route={route} dispatch={dispatch} />;
+            return <BookList route={route} dispatch={dispatch} store={store} />;
           }}
         </Consumer>
       </Provider>

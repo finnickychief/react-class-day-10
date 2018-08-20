@@ -8,13 +8,7 @@ class Book extends React.Component {
   };
 
   editHandler = dispatch => {
-    dispatch({
-      type: CHANGE_ROUTE,
-      payload: {
-        route: 'editBook',
-        book: this.props.book
-      }
-    });
+    this.props.history.push('/editBook/' + this.props.book.id);
   };
 
   render() {

@@ -8,13 +8,16 @@ class EditBookForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      id: props.book.id,
-      title: props.book.title,
-      author: props.book.author,
-      description: props.book.description,
-      price: props.book.price
-    };
+    this.state = {};
+  }
+
+  // Search for the book that the user wants to edit, using params
+  componentDidMount() {
+    const currentBook = this.props.books.filter(
+      book => book.id === this.props.match.params.id
+    );
+
+    this.setState({ ...currentBook[0] });
   }
 
   onChange = e => this.setState({ [e.target.name]: e.target.value });
