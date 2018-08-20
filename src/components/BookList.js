@@ -15,7 +15,16 @@ class BookList extends React.Component {
         <Switch>
           <Route exact path="/" component={Books} />
           <Route path="/addBook" component={AddBookForm} />
-          <Route path="/editBook/:id" component={EditBookForm} />
+          <Route
+            path="/editBook/:id"
+            render={props => (
+              <EditBookForm
+                {...props}
+                books={this.props.store.bookArray}
+                dispatch={this.props.dispatch}
+              />
+            )}
+          />
         </Switch>
       </div>
     );
