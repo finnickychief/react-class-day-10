@@ -1,12 +1,10 @@
 import React from 'react';
 import { DELETE_BOOK, CHANGE_ROUTE } from '../types';
+import { deleteBook } from '../actions';
 
 class Book extends React.Component {
   deleteHandler = dispatch => {
-    dispatch({
-      type: DELETE_BOOK,
-      payload: this.props.book
-    });
+    deleteBook(this.props.book, dispatch);
   };
 
   editHandler = dispatch => {

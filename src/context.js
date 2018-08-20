@@ -10,7 +10,8 @@ const reducer = (state, action) => {
     case ADD_BOOK:
       return {
         ...state,
-        bookArray: [action.payload, ...state.bookArray]
+        bookArray: [action.payload, ...state.bookArray],
+        route: 'viewBooks'
       };
     // [action.payload, ...state.bookArray]
     /*
@@ -36,10 +37,9 @@ const reducer = (state, action) => {
       return {
         ...state,
         bookArray: state.bookArray.map(
-          book =>
-            book.id === action.payload.book.id ? action.payload.book : book
+          book => (book.id === action.payload.id ? action.payload : book)
         ),
-        route: action.payload.route,
+        route: 'viewBooks',
         currentBook: null
       };
     }

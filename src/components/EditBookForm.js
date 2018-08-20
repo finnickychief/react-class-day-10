@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Book from './Book';
 import { UPDATE_BOOK } from '../types';
+import { updateBook } from '../actions';
 
 class EditBookForm extends React.Component {
   constructor(props) {
@@ -31,13 +32,7 @@ class EditBookForm extends React.Component {
       price
     };
 
-    dispatch({
-      type: UPDATE_BOOK,
-      payload: {
-        book: updatedBook,
-        route: 'viewBooks'
-      }
-    });
+    updateBook(updatedBook, dispatch);
   };
 
   render() {

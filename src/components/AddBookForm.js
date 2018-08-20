@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 import { Consumer } from '../context';
 import { CHANGE_ROUTE, ADD_BOOK } from '../types';
+import { createBook } from '../actions';
 
 class AddBookForm extends Component {
   constructor(props) {
@@ -35,15 +36,7 @@ class AddBookForm extends Component {
     // const action = {type: 'ADD_BOOK', payload: newBook};
     // dispatch(action);
 
-    dispatch({
-      type: ADD_BOOK,
-      payload: newBook
-    });
-
-    dispatch({
-      type: CHANGE_ROUTE,
-      payload: { route: route }
-    });
+    createBook(newBook, dispatch);
   };
 
   render() {
